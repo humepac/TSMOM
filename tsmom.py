@@ -233,7 +233,7 @@ def get_eq_line(series, data = 'returns', ret_type = 'arth', dtime = 'monthly'):
             cum_rets_prd.iloc[0] = 1
 
     elif data == 'prices':
-        cum_rets = series/series[~series.isnull()][0]
+        cum_rets = series/(series[~series.isnull()][0])
 
         if dtime == 'daily':
             cum_rets_prd = cum_rets
